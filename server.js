@@ -2,7 +2,11 @@ const express = require('express');
 const dotenv = require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 3000;
-const apiKey = process.env.apiKey
+const apiKey = process.env.apiKey;
+
+app.get('/', async(req, res)=> {
+    res.status(200).json({ success: true, message:`Welcome to user geographical condition app` });
+})
 
 app.get('/api/hello', async(req, res)=> {
         const geoResponse = await fetch('https://get.geojs.io/v1/ip/geo.json');
