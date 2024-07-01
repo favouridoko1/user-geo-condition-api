@@ -1,0 +1,16 @@
+{
+  "name": "stage1-task",
+  "version": "1.0.0",
+  "description": "creating a server that returns a user location and ip adress",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "author": "Favour Idoko",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
