@@ -1,7 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv').config();
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 const apiKey = process.env.apiKey
 
 app.get('/', (req, res)=> {
@@ -29,3 +29,5 @@ app.get('/api/hello', async(req, res)=> {
 })
 
 app.listen(port, ()=> console.log(`Server listening on port ${port}`))
+
+module.exports = app;
