@@ -20,7 +20,7 @@ app.get('/api/hello', async(req, res)=> {
     try {
         if(req.query.visitor_name) {
            const name = req.query.visitor_name
-           return res.status(200).json({ success: true, client_ip: geoData.ip, location: geoData.city, greetings: `Hello ${name}!, the temperature is ${tempInCelcius} degrees Celcius in ${geoData.city}` });
+           return res.status(200).json({ client_ip: geoData.ip, location: geoData.city, greetings: `Hello ${name}!, the temperature is ${tempInCelcius} degrees Celcius in ${geoData.city}` });
         }
         res.status(200).json({ success: true, message:`Welcome to user geographical condition app` });
 
