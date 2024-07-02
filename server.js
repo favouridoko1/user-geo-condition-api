@@ -8,7 +8,7 @@ const apiKey = process.env.apiKey;
 //     res.status(200).json({ success: true, message:`Welcome to user geographical condition app` });
 // })
 
-app.get('/', async(req, res)=> {
+app.get('/:visitor_name', async(req, res)=> {
         const geoResponse = await fetch('https://get.geojs.io/v1/ip/geo.json');
         const geoData = await geoResponse.json();
 
@@ -17,8 +17,8 @@ app.get('/', async(req, res)=> {
         const tempInCelcius = Math.round(tempData.main.temp-273.15) 
     
     try {
-        if(req.query.visitor_name) {
-           const name = req.query.visitor_name
+        if(req.params.visitor_name) {
+           const name = req.params.visitor_name
            return res.status(200).json({ success: true, client_ip: geoData.ip, location: geoData.city, greetings: `Hello ${name}!, the temperature is ${tempInCelcius} degrees Celcius in ${geoData.city}` });
         }
         res.status(200).json({ success: true, message:`Welcome to user geographical condition app` });
