@@ -22,7 +22,7 @@ app.get('/api/hello', async(req, res)=> {
            const name = req.query.visitor_name
            return res.status(200).json({ client_ip: geoData.ip, location: geoData.city, greetings: `Hello ${name}!, the temperature is ${tempInCelcius} degrees Celcius in ${geoData.city}` });
         }
-        res.status(200).json({ success: true, message:`Welcome to user geographical condition app` });
+        res.status(200).json({ success: true, message:`Query key is not valid!, make sure query key is visitor_name` });
 
     } catch (error) {
         res.status(404).json({ success: false, message: error.message });
